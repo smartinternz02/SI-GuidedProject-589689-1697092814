@@ -1,0 +1,91 @@
+
+
+
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Walmart Sales Prediction</title>
+    <link rel="stylesheet" href = "{{ url_for('static', filename='css/index.css')}}">
+    <style>
+
+
+body {
+     font-family: Arial, sans-serif;
+     text-align: center;
+     background-color: #F8BDEB;
+ }
+
+ #container {
+     max-width: 400px;
+     margin: 0 auto;
+ }
+
+ #result {
+     font-weight: bold;
+     margin-top: 10px;
+ }
+
+ h1{
+  color:#610C9F;
+ }
+  /* Style the date input */
+        input[type="date"] {
+            padding: 5px;
+            font-size: 16px;
+        }
+      
+  .button {
+    background-color: #008CBA;
+    colo:#F9F3CC;
+  }
+    </style>
+</head>
+<body>
+    <h1>Walmart Sales Prediction</h1>
+    <div id="container">
+        <label for="storeSize">Store Size:</label>
+        <input type="text" id="storeSize"><br>
+
+        <br>
+
+        <label for="department">Department:</label>
+        <input type="text" id="department"><br>
+
+        <br>
+        <label for="temperature">Temperature:</label>
+        <input type="text" id="temperature"><br>
+<br>
+        <label for="datePicker"> Date:</label>
+        <input type="date" id="datePicker"><br>
+        
+<br>
+        <label for="isHoliday">Is Holiday:</label>
+        <input type="radio" id="isHolidayYes" name="isHoliday" value="Yes"> Yes
+        <input type="radio" id="isHolidayNo" name="isHoliday" value="No"> No<br>
+<br>
+        <button onclick="predictSales()" class="button">Predict</button>
+
+        <div id="result"></div>
+    </div>
+
+    <script>
+        function predictSales() {
+            // You can implement your prediction logic here
+            // This is a placeholder for your machine learning code
+            // Replace this with your actual prediction code
+
+            // For now, let's just display a random number as a placeholder
+            const randomSales = Math.floor(Math.random() * 100000);
+            document.getElementById('result').innerText = `Predicted Sales: $${randomSales}`;
+        }
+         // You can use JavaScript to add additional functionality if needed.
+        const datePicker = document.getElementById('datePicker');
+
+        // Example: Add an event listener to the date input
+        datePicker.addEventListener('change', function() {
+            const selectedDate = this.value;
+            console.log('Selected Date:', selectedDate);
+        });
+    </script>
+</body>
+</html>
